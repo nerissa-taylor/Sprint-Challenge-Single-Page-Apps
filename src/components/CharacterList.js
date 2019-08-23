@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CharacterCard from './CharacterCard';
-
+import axios from 'axios';
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [characters, setCharacter] = useState(null);
@@ -9,9 +9,9 @@ export default function CharacterList() {
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
 
 
-    axios.get('')
+    axios.get('https://rickandmortyapi.com/api/character/')
       .then(res => {
-        const items = response.data;
+        const items = res.data;
 
         console.log(items)
         setCharacter(items)
@@ -22,7 +22,7 @@ export default function CharacterList() {
 
   return (
     <div className="item">
-      {items.map(item => {
+      {characters.map(item => {
         return (
           <CharacterCard
             key={item.id}
@@ -34,3 +34,4 @@ export default function CharacterList() {
       })}
     </div>
   );
+}

@@ -5,20 +5,20 @@ import LocationCard from './LocationCard';
 const [locations, setLocation] = useState([]);
 useEffect(() => {
 
-    axios.get('')
+    axios.get('https://rickandmortyapi.com/api/location/')
         .then(res => {
-            const items = response.data;
+            const items = res.data;
 
             console.log(items)
             setLocation(items)
             console.log('response', res)
 
         });
-}, []);
+}, [locations]);
 
 return (
     <div className="item">
-        {items.map(item => {
+        {locations.map(item => {
             return (
                 <LocationCard
                     key={item.id}
