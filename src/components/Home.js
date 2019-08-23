@@ -2,7 +2,7 @@ import React from 'react';
 function Home() {
     return (
 
-        <p>{item.image}</p>
+        <p></p>
     )
 }
 export default Home
