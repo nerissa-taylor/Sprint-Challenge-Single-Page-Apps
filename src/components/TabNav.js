@@ -9,16 +9,16 @@ import CharacterCard from "./CharacterCard";
 
 
 
-const panes = [
-    {
-        menuItem: 'Character, pane: 'CharacterCard' },
-    { menuItem: 'Location', pane: 'LocationCard' },
-    { menuItem: 'Episode', pane: 'EpisodeCard' },
-]
+// const panes = [
+//     {
+//         menuItem: 'Character, pane: 'Character' },
+//     { menuItem: 'Location', pane: 'LocationCard' },
+//     { menuItem: 'Episode', pane: 'EpisodeCard' },
+// ]
 
-const TabNav = () => <Tab panes={panes} renderActiveOnly={false} />
+// const TabNav = () => <Tab panes={panes} renderActiveOnly={false} />
 
-export default function TabNav;
+// export default function TabNav
 
 
 
