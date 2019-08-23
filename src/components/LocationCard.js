@@ -1,16 +1,28 @@
-import React from "react";
 
-export default function LocationCard(props) {
-  return (
+import React from 'react'
+import { Card, Icon } from 'semantic-ui-react'
+
+const extra = (
+  <a>
+    <Icon name='user' />
+    Residents
+   
+   
+  </a>
+)
+
+const LocationCard = (props) => (
+  <Card
+    image=''
+    header={props.name}
+    meta={props.type}
+    description={props.dimension}
+    extra={extra}
 
 
-    <div>
-      <span>todo: location</span>;
-    <h1>Name:{props.name}</h1>
-      <p>Type:{props.type}</p>
-      <p>Dimension:{props.dimension}</p>
-      <p></p>
 
-    </div>
-  )
-}
+
+  />
+)
+
+export default LocationCard;

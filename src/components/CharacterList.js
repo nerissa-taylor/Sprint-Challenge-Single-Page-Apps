@@ -15,9 +15,10 @@ export default function CharacterList() {
 
         const items = res.data;
 
-        console.log(items)
+
         setCharacter(res.data.results)
-        console.log('response', res)
+        console.log(res.data.results)
+
 
       });
   }, []);
@@ -25,12 +26,13 @@ export default function CharacterList() {
   return (
 
     <div>
-      {character.map(item => <CharacterCard
+      {character.map((item, index) => <CharacterCard
         item={item}
-        key={item.id}
+        key={index}
         name={item.name}
         status={item.status}
-        species={item.species} />
+        species={item.species}
+        image={item.image} />
       )}
     </div>
 
