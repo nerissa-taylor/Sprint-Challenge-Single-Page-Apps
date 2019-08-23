@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import CharacterCard from './CharacterCard';
 import axios from 'axios';
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
-  const [characters, setCharacter] = useState(null);
+  const [character, setCharacter] = useState([]);
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
@@ -21,17 +21,17 @@ export default function CharacterList() {
   }, []);
 
   return (
-    <div className="item">
-      {characters.map(item => {
-        return (
-          <CharacterCard
-            key={item.id}
-            id={item.id}
-            name={item.name}
-            status={item.status}
-            species={item.species} />
-        );
-      })}
-    </div>
-  );
+
+    {
+      character.map((item, index) => <CharacterCard
+        item={item}
+        key={item.id}
+        id={item.id}
+        name={item.name}
+        status={item.status}
+        species={item.species} />
+
+      )
+    }
+    
 }
